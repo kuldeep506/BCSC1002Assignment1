@@ -9,9 +9,9 @@ package definitions;
 import java.util.Objects;
 
 public class Book {
-private String bookName;
-private String authorName;
-private String ISBNNumber;
+    private String bookName;
+    private String authorName;
+    private String ISBNNumber;
 
     public Book(String bookName, String authorName, String ISBNNumber) {
         this.bookName = bookName;
