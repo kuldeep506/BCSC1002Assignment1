@@ -14,9 +14,11 @@ public class Library {
     public Library(Book[] availableBooks) {
         this.availableBooks = availableBooks;
     }
-public void returnBook(String bookName){
-    System.out.println("Thank You For Returning Book Name: "+bookName);
-}
+
+    public void returnBook(String bookName) {
+        System.out.println("Thank You For Returning Book Name: " + bookName);
+    }
+
     public Book[] getAvailableBooks() {
         return availableBooks;
     }
