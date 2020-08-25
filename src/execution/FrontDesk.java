@@ -6,7 +6,10 @@
  * */
 package execution;
 
+import definitions.Student;
+
 public class FrontDesk {
+    private Student currentStudent;
     public static void main(String[] args) {
 
     }
