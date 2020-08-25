@@ -7,6 +7,7 @@
 package definitions;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Library {
     private Book[] availableBooks;
@@ -17,6 +18,10 @@ public class Library {
 
     public void returnBook(String bookName) {
         System.out.println("Thank You For Returning Book Name: " + bookName);
+    }
+    public void issueBook(String bookName){
+    Book book=new Book(bookName);
+
     }
 
     public Book[] getAvailableBooks() {

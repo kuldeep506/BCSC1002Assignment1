@@ -20,7 +20,7 @@ public class FrontDesk {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         int customerInput;
-        Book bookName =new Book();
+
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n");
             System.out.println("How may I help you today?");
@@ -33,7 +33,8 @@ public class FrontDesk {
             case ISSUE_NEW_BOOK:
                 System.out.println("Enter a book name you want");
                 scanner.nextLine();
-                bookName=scanner.nextLine();
+
+                Book book =new Book();
 
         }
         }
