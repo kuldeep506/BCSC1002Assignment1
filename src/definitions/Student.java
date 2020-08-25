@@ -12,4 +12,11 @@ private long universityRollNumber;
 private int numberOfBooksIssuedToStudent;
 private Book[] nameOfBooksIssuedToStudent;
 
+    public Student(String studentFullName, long universityRollNumber, int numberOfBooksIssuedToStudent, Book[] nameOfBooksIssuedToStudent) {
+        this.studentFullName = studentFullName;
+        this.universityRollNumber = universityRollNumber;
+        this.numberOfBooksIssuedToStudent = numberOfBooksIssuedToStudent;
+        this.nameOfBooksIssuedToStudent = nameOfBooksIssuedToStudent;
+    }
+
 }
