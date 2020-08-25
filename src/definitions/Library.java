@@ -9,7 +9,7 @@ package definitions;
 import java.util.Arrays;
 
 public class Library {
-private Book availableBooks[];
+    private Book[] availableBooks;
 
     public Library(Book[] availableBooks) {
         this.availableBooks = availableBooks;
@@ -42,5 +42,4 @@ private Book availableBooks[];
     public int hashCode() {
         return Arrays.hashCode(getAvailableBooks());
     }
-
 }
