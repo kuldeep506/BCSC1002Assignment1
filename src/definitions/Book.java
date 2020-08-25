@@ -40,4 +40,14 @@ private String ISBNNumber;
     public void setISBNNumber(String ISBNNumber) {
         this.ISBNNumber = ISBNNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", authorName='" + authorName + '\'' +
+                ", ISBNNumber='" + ISBNNumber + '\'' +
+                '}';
+    }
+
 }
