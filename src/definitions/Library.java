@@ -13,4 +13,12 @@ private Book availableBooks[];
         this.availableBooks = availableBooks;
     }
 
+    public Book[] getAvailableBooks() {
+        return availableBooks;
+    }
+
+    public void setAvailableBooks(Book[] availableBooks) {
+        this.availableBooks = availableBooks;
+    }
+
 }
