@@ -19,6 +19,8 @@ public class FrontDesk {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         String currentStudentName;
+        Scanner scanner1=new Scanner(System.in);
+        int customerInput;
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n");
             System.out.println("How may I help you today?");
@@ -26,6 +28,9 @@ public class FrontDesk {
             System.out.println("2. Return a previously issues book for me.\n");
             System.out.println("3. Show me all my issues books.\n");
             System.out.println("4. Exit.\n");
+            customerInput=scanner1.nextInt();
+         switch (customerInput)
+
         }
     }
 }
