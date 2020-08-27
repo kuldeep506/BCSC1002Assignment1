@@ -28,20 +28,21 @@ public class FrontDesk {
         String authorName;
         String ISBNNumber;
         System.out.println("enter your name\r");
-        studentName=scanner.nextLine();
+        studentName = scanner.nextLine();
         scanner.nextLine();
         System.out.println("enter your university roll number\r");
-        universityRollNumber=scanner.nextLong();
+        universityRollNumber = scanner.nextLong();
         scanner.nextLine();
         System.out.println("enter book name which you want\r");
-        nameOfBook=scanner.nextLine();
+        nameOfBook = scanner.nextLine();
         System.out.println("Enter book's author Name");
-        authorName=scanner.nextLine();
+        authorName = scanner.nextLine();
         System.out.println("Enter 12 digit ISBN number");
-        ISBNNumber=scanner.nextLine();
-        Book book = new Book(nameOfBook,authorName,ISBNNumber);
+        ISBNNumber = scanner.nextLine();
+        Book book = new Book(nameOfBook, authorName, ISBNNumber);
         Book[] issuedBooks = {book};
         Student student = new Student(studentName, universityRollNumber, issuedBooks.length, issuedBooks);
+        Library library = new Library();
         System.out.println("************************************************************************************");
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n");
@@ -54,14 +55,14 @@ public class FrontDesk {
             customerInput = scanner.nextInt();
             switch (customerInput) {
                 case ISSUE_NEW_BOOK:
-
+                    library.issueBook(nameOfBook);
                     break;
                 case RETURN_BOOK:
                     library.returnBook();
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
-                    library.booksIssuedToStudent(nameOfBook,);
-                    System.out.println("Books issued to are: "+ Arrays.toString(student.getNameOfBooksIssuedToStudent()));
+                    library.issuedBooksToStudent(studentName, universityRollNumber, issuedBooks);
+                    System.out.println("Books issued to are: " + Arrays.toString(student.getNameOfBooksIssuedToStudent()));
                     break;
                 default:
                     break;
