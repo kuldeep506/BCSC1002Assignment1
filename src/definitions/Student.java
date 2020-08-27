@@ -88,5 +88,18 @@ public class Student {
     public void setNameOfBooksIssuedToStudent(Book[] nameOfBooksIssuedToStudent) {
         this.nameOfBooksIssuedToStudent = nameOfBooksIssuedToStudent;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentFullName='" + studentFullName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", universityRollNumber=" + universityRollNumber +
+                ", numberOfBooksIssuedToStudent=" + numberOfBooksIssuedToStudent +
+                ", nameOfBooksIssuedToStudent=" + Arrays.toString(nameOfBooksIssuedToStudent) +
+                '}';
+    }
 }
 
