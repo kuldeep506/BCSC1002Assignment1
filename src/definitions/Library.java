@@ -53,21 +53,26 @@ public class Library {
         return Arrays.hashCode(getAvailableBooks());
     }
 
-    public void issueBook(String studentName, long universityRollNumber, String bookNames) {
-        Book book = new Book(bookNames);
-        Book[] issuedBooks = new Book[]{book};
+    public void issueBook(String studentName, long universityRollNumber, String bookNames,String authorName,String ISBNNumber) {
+        Book book = new Book(bookNames,authorName,ISBNNumber);
+        Book[] issuedBooks = {book};
         Student student = new Student(studentName, universityRollNumber, issuedBooks.length, issuedBooks);
-        student.setNameOfBooksIssuedToStudent(issuedBooks);
         System.out.println("Book Name \"" + book.getBookName() + "\" assigned to You");
+        student.setNameOfBooksIssuedToStudent(issuedBooks);
     }
 
     public void returnBook() {
         String bookName;
-        System.out.println("enter the name which you want to return");
+        System.out.println("Enter the name which you want to return");
         Scanner scanner = new Scanner(System.in);
         bookName = scanner.nextLine();
-        System.out.println("thank you for returning book: \"" +bookName+"\"");
+        System.out.println("Thank you for returning book: \"" +bookName+"\"");
+    }
 
+    public static void main(String[] args) {
+        Book book = new Book("helen","Billy bordan","12453584AB154");
+        Book[] issuedBooks = {book};
+        Student student = new Student("kuldeep", 123456, issuedBooks.length, issuedBooks);
 
     }
 }

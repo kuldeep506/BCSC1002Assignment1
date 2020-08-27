@@ -37,6 +37,8 @@ public class FrontDesk {
                     String studentName;
                     long universityRollNumber;
                     String nameOfBook;
+                    String authorName;
+                    String ISBNNumber;
                     System.out.println("enter your name\r");
                     studentName=scanner.nextLine();
                     scanner.nextLine();
@@ -45,7 +47,13 @@ public class FrontDesk {
                     scanner.nextLine();
                     System.out.println("enter book name which you want\r");
                     nameOfBook=scanner.nextLine();
-                    library.issueBook(studentName, universityRollNumber, nameOfBook);
+                    scanner.nextLine();
+                    System.out.println("Enter book's author Name\r");
+                    authorName=scanner.nextLine();
+                    scanner.nextLine();
+                    System.out.println("Enter 12 digit ISBN Number\r");
+                    ISBNNumber=scanner.nextLine();
+                    library.issueBook(studentName, universityRollNumber, nameOfBook,authorName,ISBNNumber);
                     break;
                 case RETURN_BOOK:
                     library.returnBook();
