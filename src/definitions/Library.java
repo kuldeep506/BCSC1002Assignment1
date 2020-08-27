@@ -16,12 +16,13 @@ public class Library {
         this.availableBooks = availableBooks;
     }
 
-    public void returnBook(String bookName) {
-        System.out.println("Thank You For Returning Book Name: " + bookName);
-    }
-    public void issueBook(String bookName){
-    Book book=new Book(bookName);
-
+    public Library() {
+        Book book1 = new Book("java fundamental", "Tom Moody", "12453584AB123");
+        Book book2 = new Book("python fundamental", "Karl beast", "12453584AB126");
+        Book book3 = new Book("C fundamental", "Mike Jackson", "12453584AB128");
+        Book book4 = new Book("C++ fundamental", "Vinod tharu", "12453584AB154");
+        Book[] books = new Book[]{book1, book2, book3, book4};
+        this.availableBooks = books;
     }
 
     public Book[] getAvailableBooks() {

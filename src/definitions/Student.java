@@ -21,6 +21,22 @@ public class Student {
         this.numberOfBooksIssuedToStudent = numberOfBooksIssuedToStudent;
         this.nameOfBooksIssuedToStudent = nameOfBooksIssuedToStudent;
     }
+    public Student(Book[] nameOfBooksIssuedToStudent){
+        Book[] books=new Book[3];
+
+    }
+
+    public Student() {
+        this.nameOfBooksIssuedToStudent = new Book[3];
+        for (int i = 0; i < nameOfBooksIssuedToStudent.length; i++) {
+            nameOfBooksIssuedToStudent[i] = new Book("Video " + (i + 1));
+        }
+    }
+
+    public Student(String studentFullName, long universityRollNumber) {
+        this.studentFullName = studentFullName;
+        this.universityRollNumber = universityRollNumber;
+    }
 
     public String getStudentFullName() {
         return studentFullName;
@@ -47,7 +63,7 @@ public class Student {
     }
 
     public Book[] getNameOfBooksIssuedToStudent() {
-        return nameOfBooksIssuedToStudent;
+        return nameOfBooksIssuedToStudent.clone();
     }
 
     public void setNameOfBooksIssuedToStudent(Book[] nameOfBooksIssuedToStudent) {

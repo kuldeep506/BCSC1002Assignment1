@@ -19,6 +19,9 @@ public class Book {
         this.ISBNNumber = ISBNNumber;
     }
 
+    public Book() {
+    }
+
     public Book(String bookName) {
         this.bookName = bookName;
     }

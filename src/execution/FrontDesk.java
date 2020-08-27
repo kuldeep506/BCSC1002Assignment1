@@ -6,21 +6,26 @@
  * */
 package execution;
 
-import definitions.Book;
+import definitions.Library;
 import definitions.Student;
 
 import java.util.Scanner;
 
 public class FrontDesk {
-    private Student currentStudentDetails;
-    private static final int ISSUE_NEW_BOOK=1;
-    private static final int RETURN_BOOK=2;
-    private static final int SHOW_ALL_ISSUED_BOOKS=3;
-    private static final int EXIT=3;
-    public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        int customerInput;
+    private static final int ISSUE_NEW_BOOK = 1;
+    private static final int RETURN_BOOK = 2;
+    private static final int SHOW_ALL_ISSUED_BOOKS = 3;
+    private static final int EXIT = 4;
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Library library = new Library();
+        Student student = new Student();
+        String studentName;
+        long universityRollNumber;
+        String returningBookName;
+        int numberOfBooks;
+        int customerInput;
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n");
             System.out.println("How may I help you today?");
@@ -28,17 +33,37 @@ public class FrontDesk {
             System.out.println("2. Return a previously issues book for me.\n");
             System.out.println("3. Show me all my issues books.\n");
             System.out.println("4. Exit.\n");
-            customerInput=scanner.nextInt();
-         switch (customerInput){
-            case ISSUE_NEW_BOOK:
-                System.out.println("Enter a book name you want");
-                scanner.nextLine();
+            System.out.println("enter your choice from choice from 1-4");
+            customerInput = scanner.nextInt();
+            switch (customerInput) {
+                case ISSUE_NEW_BOOK:
+                    System.out.println("enter your name");
+                    studentName = scanner.nextLine();
+                    student.setStudentFullName(studentName);
+                    scanner.nextLine();
+                    System.out.println("enter your university roll number");
+                    universityRollNumber = scanner.nextLong();
+                    student.setUniversityRollNumber(universityRollNumber);
+                    System.out.println("enter number of books issues to "+studentName);
+                    numberOfBooks=scanner.nextInt();
+                    student.setNumberOfBooksIssuedToStudent(numberOfBooks);
+                    library.issueBook();
+                    break;
 
-                Book book =new Book();
+                case RETURN_BOOK:
+                    System.out.println("enter the name of book you want to return");
+                    returningBookName = scanner.nextLine();
+                    library.returnBook(returningBookName);
+                    break;
+                case SHOW_ALL_ISSUED_BOOKS:
+                    student.getNameOfBooksIssuedToStudent();
+                    break;
+                default:
+                    break;
 
+            }
         }
-        }
-        while (customerInput!=EXIT);
+        while (customerInput != EXIT);
         scanner.close();
     }
 }
