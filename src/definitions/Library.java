@@ -70,7 +70,7 @@ public class Library {
      * @param books       name of book which we want.
      */
     public void issuedBooksToStudent(String studentName, long rollNumber, Book[] books) {
-        System.out.println("books assigned to  " + studentName + " roll number " + rollNumber + " are: " + books);
+        System.out.println("books assigned to  " + studentName + " roll number " + rollNumber + " are: " + Arrays.toString(books));
     }
 
     /**

@@ -27,12 +27,12 @@ public class FrontDesk {
         String nameOfBook;
         String authorName;
         String ISBNNumber;
-        System.out.println("enter your name\r");
+        System.out.println("Enter your Name\r");
         studentName = scanner.nextLine();
-        System.out.println("enter your university roll number\r");
+        System.out.println("Enter your university roll number\r");
         universityRollNumber = scanner.nextLong();
         scanner.nextLine();
-        System.out.println("enter book name you have assigned earlier\r");
+        System.out.println("Enter book name you have assigned earlier\r");
         nameOfBook = scanner.nextLine();
         System.out.println("Enter book's author Name");
         authorName = scanner.nextLine();
@@ -54,9 +54,10 @@ public class FrontDesk {
             customerInput = scanner.nextInt();
             switch (customerInput) {
                 case ISSUE_NEW_BOOK:
-                    System.out.println("Enter the name of book you want");
+                    Scanner scanner1=new Scanner(System.in);
                     String bookName;
-                    bookName = scanner.nextLine();
+                    System.out.println("Enter the name of book you want");
+                    bookName = scanner1.nextLine();
                     library.issueBook(bookName);
                     break;
                 case RETURN_BOOK:
@@ -64,7 +65,6 @@ public class FrontDesk {
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
                     library.issuedBooksToStudent(studentName, universityRollNumber, issuedBooks);
-                    System.out.println("Books issued to " + studentName + " roll number " + universityRollNumber + " are: " + Arrays.toString(student.getNameOfBooksIssuedToStudent()));
                     break;
                 default:
                     break;
