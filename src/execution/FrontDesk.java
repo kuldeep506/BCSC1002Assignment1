@@ -19,12 +19,7 @@ public class FrontDesk {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Library library = new Library();
-        Student student = new Student();
-        String studentName;
-        long universityRollNumber;
-        String returningBookName;
-        int numberOfBooks;
+
         int customerInput;
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n");
@@ -37,26 +32,14 @@ public class FrontDesk {
             customerInput = scanner.nextInt();
             switch (customerInput) {
                 case ISSUE_NEW_BOOK:
-                    System.out.println("enter your name");
-                    studentName = scanner.nextLine();
-                    student.setStudentFullName(studentName);
-                    scanner.nextLine();
-                    System.out.println("enter your university roll number");
-                    universityRollNumber = scanner.nextLong();
-                    student.setUniversityRollNumber(universityRollNumber);
-                    System.out.println("enter number of books issues to "+studentName);
-                    numberOfBooks=scanner.nextInt();
-                    student.setNumberOfBooksIssuedToStudent(numberOfBooks);
-                    library.issueBook();
+
                     break;
 
                 case RETURN_BOOK:
-                    System.out.println("enter the name of book you want to return");
-                    returningBookName = scanner.nextLine();
-                    library.returnBook(returningBookName);
+
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
-                    student.getNameOfBooksIssuedToStudent();
+
                     break;
                 default:
                     break;
