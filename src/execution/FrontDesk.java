@@ -6,6 +6,7 @@
  * */
 package execution;
 
+import definitions.Book;
 import definitions.Library;
 import definitions.Student;
 
@@ -20,9 +21,28 @@ public class FrontDesk {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Library library = new Library();
-        Student student = new Student();
         int customerInput;
+        String studentName;
+        long universityRollNumber;
+        String nameOfBook;
+        String authorName;
+        String ISBNNumber;
+        System.out.println("enter your name\r");
+        studentName=scanner.nextLine();
+        scanner.nextLine();
+        System.out.println("enter your university roll number\r");
+        universityRollNumber=scanner.nextLong();
+        scanner.nextLine();
+        System.out.println("enter book name which you want\r");
+        nameOfBook=scanner.nextLine();
+        System.out.println("Enter book's author Name");
+        authorName=scanner.nextLine();
+        System.out.println("Enter 12 digit ISBN number");
+        ISBNNumber=scanner.nextLine();
+        Book book = new Book(nameOfBook,authorName,ISBNNumber);
+        Book[] issuedBooks = {book};
+        Student student = new Student(studentName, universityRollNumber, issuedBooks.length, issuedBooks);
+        System.out.println("************************************************************************************");
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n");
             System.out.println("How may I help you today?\n");
@@ -34,31 +54,13 @@ public class FrontDesk {
             customerInput = scanner.nextInt();
             switch (customerInput) {
                 case ISSUE_NEW_BOOK:
-                    String studentName;
-                    long universityRollNumber;
-                    String nameOfBook;
-                    String authorName;
-                    String ISBNNumber;
-                    System.out.println("enter your name\r");
-                    studentName=scanner.nextLine();
-                    scanner.nextLine();
-                    System.out.println("enter your university roll number\r");
-                    universityRollNumber=scanner.nextLong();
-                    scanner.nextLine();
-                    System.out.println("enter book name which you want\r");
-                    nameOfBook=scanner.nextLine();
-                    scanner.nextLine();
-                    System.out.println("Enter book's author Name\r");
-                    authorName=scanner.nextLine();
-                    scanner.nextLine();
-                    System.out.println("Enter 12 digit ISBN Number\r");
-                    ISBNNumber=scanner.nextLine();
-                    library.issueBook(studentName, universityRollNumber, nameOfBook,authorName,ISBNNumber);
+
                     break;
                 case RETURN_BOOK:
                     library.returnBook();
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
+                    library.booksIssuedToStudent(nameOfBook,);
                     System.out.println("Books issued to are: "+ Arrays.toString(student.getNameOfBooksIssuedToStudent()));
                     break;
                 default:
