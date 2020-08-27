@@ -51,7 +51,10 @@ public class Library {
     public int hashCode() {
         return Arrays.hashCode(getAvailableBooks());
     }
-    public void issueBook(String studentName,long universityRollNumber,Book[] bookName){
-        Student student=new Student(studentName,universityRollNumber,);
+    public void issueBook(String studentName,long universityRollNumber,int numberOfBookIssuedToStudent,String bookNames) {
+        Book book= new Book(bookNames);
+        Book[] issuedBooks=new Book[]{book};
+        Student student=new Student(studentName,universityRollNumber,numberOfBookIssuedToStudent,issuedBooks);
+        System.out.println("Book Name "+book.getBookName()+"assigned to You");
     }
 }
