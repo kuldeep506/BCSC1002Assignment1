@@ -17,8 +17,11 @@ public class Student {
     private int numberOfBooksIssuedToStudent;
     private Book[] nameOfBooksIssuedToStudent;
 
-    public Student(String firstName,String lastName) {
-        this.studentFullName =firstName+lastName;
+    public Student(String firstName, String lastName,long universityRollNumber, int numberOfBooksIssuedToStudent,Book[] nameOfBooksIssuedToStudent) {
+        this.studentFullName = firstName + lastName;
+        this.universityRollNumber = universityRollNumber;
+        this.numberOfBooksIssuedToStudent = numberOfBooksIssuedToStudent;
+        this.nameOfBooksIssuedToStudent = nameOfBooksIssuedToStudent;
     }
 
     public Student(String firstName, String middleName, String lastName, long universityRollNumber, int numberOfBooksIssuedToStudent, Book[] nameOfBooksIssuedToStudent) {
@@ -28,7 +31,7 @@ public class Student {
         this.universityRollNumber = universityRollNumber;
         this.numberOfBooksIssuedToStudent = numberOfBooksIssuedToStudent;
         this.nameOfBooksIssuedToStudent = nameOfBooksIssuedToStudent;
-        this.studentFullName=firstName+middleName+lastName;
+        this.studentFullName = firstName + middleName + lastName;
 
     }
 

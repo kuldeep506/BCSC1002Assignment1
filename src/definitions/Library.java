@@ -51,4 +51,7 @@ public class Library {
     public int hashCode() {
         return Arrays.hashCode(getAvailableBooks());
     }
+    public void issueBook(String studentName,long universityRollNumber,Book[] bookName){
+        Student student=new Student(studentName,universityRollNumber,);
+    }
 }
