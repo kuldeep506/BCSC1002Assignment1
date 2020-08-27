@@ -1,6 +1,6 @@
 /*  Created by IntelliJ IDEA.
- *  User: Divyansh Bhardwaj (dbc2201)
- *  Date: 21/08/20
+ *  User: Kuldeep Singh (Kuldeep506)
+ *  Date: 27/08/20
  *  Time: 3:50 PM
  *  File Name : FrontDesk.java
  * */
@@ -29,11 +29,10 @@ public class FrontDesk {
         String ISBNNumber;
         System.out.println("enter your name\r");
         studentName = scanner.nextLine();
-        scanner.nextLine();
         System.out.println("enter your university roll number\r");
         universityRollNumber = scanner.nextLong();
         scanner.nextLine();
-        System.out.println("enter book name which you want\r");
+        System.out.println("enter book name you have assigned earlier\r");
         nameOfBook = scanner.nextLine();
         System.out.println("Enter book's author Name");
         authorName = scanner.nextLine();
@@ -55,14 +54,17 @@ public class FrontDesk {
             customerInput = scanner.nextInt();
             switch (customerInput) {
                 case ISSUE_NEW_BOOK:
-                    library.issueBook(nameOfBook);
+                    System.out.println("Enter the name of book you want");
+                    String bookName;
+                    bookName = scanner.nextLine();
+                    library.issueBook(bookName);
                     break;
                 case RETURN_BOOK:
                     library.returnBook();
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
                     library.issuedBooksToStudent(studentName, universityRollNumber, issuedBooks);
-                    System.out.println("Books issued to are: " + Arrays.toString(student.getNameOfBooksIssuedToStudent()));
+                    System.out.println("Books issued to " + studentName + " roll number " + universityRollNumber + " are: " + Arrays.toString(student.getNameOfBooksIssuedToStudent()));
                     break;
                 default:
                     break;

@@ -67,14 +67,15 @@ public class Library {
      *
      * @param studentName name of book which we want.
      * @param rollNumber  name of book which we want.
-     * @param books name of book which we want.
+     * @param books       name of book which we want.
      */
     public void issuedBooksToStudent(String studentName, long rollNumber, Book[] books) {
         System.out.println("books assigned to  " + studentName + " roll number " + rollNumber + " are: " + books);
     }
-/**
- * this method is allow us to return book to Library.
- */
+
+    /**
+     * this method is allow us to return book to Library.
+     */
     public void returnBook() {
         String bookName;
         System.out.println("Enter the name which you want to return");
