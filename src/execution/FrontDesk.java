@@ -19,32 +19,30 @@ public class FrontDesk {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Library library=new Library();
-        Student student=new Student();
+        Library library = new Library();
+        Student student = new Student();
         int customerInput;
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n");
-            System.out.println("How may I help you today?");
-            System.out.println("1. Issue a new book for me.");
+            System.out.println("How may I help you today?\n");
+            System.out.println("1. Issue a new book for me.\n");
             System.out.println("2. Return a previously issues book for me.\n");
             System.out.println("3. Show me all my issues books.\n");
             System.out.println("4. Exit.\n");
-            System.out.println("enter your choice from choice from 1-4");
+            System.out.println("enter your choice from choice from 1-4\r");
             customerInput = scanner.nextInt();
             switch (customerInput) {
                 case ISSUE_NEW_BOOK:
-library.issueBook("kuldeep singh",123456,"helen");
+                    library.issueBook("kuldeep singh", 123456, "helen");
                     break;
-
                 case RETURN_BOOK:
-library.returnBook();
+                    library.returnBook();
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
-
+                    student.getNameOfBooksIssuedToStudent();
                     break;
                 default:
                     break;
-
             }
         }
         while (customerInput != EXIT);

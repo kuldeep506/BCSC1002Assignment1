@@ -65,7 +65,7 @@ public class Library {
         System.out.println("enter the name which you want to return");
         Scanner scanner = new Scanner(System.in);
         bookName = scanner.nextLine();
-        System.out.println("thank you for returning book: " + bookName);
+        System.out.println("thank you for returning book: \"" +bookName+"\"");
 
 
     }
