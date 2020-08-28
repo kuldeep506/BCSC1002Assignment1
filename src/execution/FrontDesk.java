@@ -19,6 +19,8 @@ public class FrontDesk {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Library library=new Library();
+        Student student=new Student();
         int customerInput;
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n");
@@ -31,11 +33,11 @@ public class FrontDesk {
             customerInput = scanner.nextInt();
             switch (customerInput) {
                 case ISSUE_NEW_BOOK:
-
+library.issueBook("kuldeep singh",123456,"helen");
                     break;
 
                 case RETURN_BOOK:
-
+library.returnBook();
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
 

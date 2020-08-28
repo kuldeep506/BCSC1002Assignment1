@@ -7,6 +7,7 @@
 package definitions;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Library {
     private Book[] availableBooks;
@@ -51,10 +52,21 @@ public class Library {
     public int hashCode() {
         return Arrays.hashCode(getAvailableBooks());
     }
-    public void issueBook(String studentName,long universityRollNumber,int numberOfBookIssuedToStudent,String bookNames) {
-        Book book= new Book(bookNames);
-        Book[] issuedBooks=new Book[]{book};
-        Student student=new Student(studentName,universityRollNumber,numberOfBookIssuedToStudent,issuedBooks);
-        System.out.println("Book Name "+book.getBookName()+"assigned to You");
+
+    public void issueBook(String studentName, long universityRollNumber, String bookNames) {
+        Book book = new Book(bookNames);
+        Book[] issuedBooks = new Book[]{book};
+        Student student = new Student(studentName, universityRollNumber, issuedBooks.length, issuedBooks);
+        System.out.println("Book Name \"" + book.getBookName() + "\" assigned to You");
+    }
+
+    public void returnBook() {
+        String bookName;
+        System.out.println("enter the name which you want to return");
+        Scanner scanner = new Scanner(System.in);
+        bookName = scanner.nextLine();
+        System.out.println("thank you for returning book: " + bookName);
+
+
     }
 }
