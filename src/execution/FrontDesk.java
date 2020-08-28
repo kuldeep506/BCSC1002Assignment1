@@ -9,6 +9,7 @@ package execution;
 import definitions.Library;
 import definitions.Student;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FrontDesk {
@@ -33,13 +34,24 @@ public class FrontDesk {
             customerInput = scanner.nextInt();
             switch (customerInput) {
                 case ISSUE_NEW_BOOK:
-                    library.issueBook("kuldeep singh", 123456, "helen");
+                    String studentName;
+                    long universityRollNumber;
+                    String nameOfBook;
+                    System.out.println("enter your name\r");
+                    studentName=scanner.nextLine();
+                    scanner.nextLine();
+                    System.out.println("enter your university roll number\r");
+                    universityRollNumber=scanner.nextLong();
+                    scanner.nextLine();
+                    System.out.println("enter book name which you want\r");
+                    nameOfBook=scanner.nextLine();
+                    library.issueBook(studentName, universityRollNumber, nameOfBook);
                     break;
                 case RETURN_BOOK:
                     library.returnBook();
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
-                    student.getNameOfBooksIssuedToStudent();
+                    System.out.println("Books issued to are: "+ Arrays.toString(student.getNameOfBooksIssuedToStudent()));
                     break;
                 default:
                     break;

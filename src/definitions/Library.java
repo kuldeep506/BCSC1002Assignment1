@@ -57,6 +57,7 @@ public class Library {
         Book book = new Book(bookNames);
         Book[] issuedBooks = new Book[]{book};
         Student student = new Student(studentName, universityRollNumber, issuedBooks.length, issuedBooks);
+        student.setNameOfBooksIssuedToStudent(issuedBooks);
         System.out.println("Book Name \"" + book.getBookName() + "\" assigned to You");
     }
 
